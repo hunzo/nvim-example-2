@@ -53,7 +53,7 @@ return packer.startup(function(use)
 	use("lunarvim/darkplus.nvim")
 	use("EdenEast/nightfox.nvim")
 	use("morhetz/gruvbox")
-
+	use("lifepillar/vim-solarized8")
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
 	use("hrsh7th/cmp-buffer") -- buffer completions
@@ -102,6 +102,9 @@ return packer.startup(function(use)
 	use({
 		"nvim-lualine/lualine.nvim",
 	})
+
+	-- emmet
+	use("mattn/emmet-vim")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
