@@ -44,6 +44,11 @@ end
 -- vim.cmd [[autocmd FileType xml,html,xhtml,css,scss,javascript,lua,yaml setlocal shiftwidth=2 tabstop=2]]
 -- vim.cmd [[autocmd FileType go,python setlocal shiftwidth=4 tabstop=4 smarttab]]
 vim.cmd([[autocmd FileType go,python setlocal shiftwidth=4 tabstop=4]])
+-- copy (write) highlighted text to .vimbuffer
+vim.cmd([[vmap <C-c> y:new ~/.vimbuffer<CR>VGp:x<CR> \| :!cat ~/.vimbuffer \| clip.exe <CR><CR>]])
+-- delete empty space from the end of lines on every save
+vim.cmd([[autocmd BufWritePre * :%s/\s\+$//e]])
+
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
 vim.cmd([[set formatoptions-=cro]]) -- TODO: this doesn't seem to work
